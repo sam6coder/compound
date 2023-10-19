@@ -253,7 +253,7 @@ int main()
 
 
     ifstream file;
-    file.open("input2.txt");
+    file.open("input1.txt");
     if (!file) {
         cout << "Error in opening input file" << endl;
         return -1;
