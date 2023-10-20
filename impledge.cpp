@@ -244,11 +244,18 @@ bool Trie::searchWord(string s)
     return false;
 }
 
-
+void printTimeTaken(chrono::high_resolution_clock::time_point start, chrono::high_resolution_clock::time_point end) {
+    double time_taken = chrono::duration_cast<chrono::nanoseconds>(end - start).count();
+    time_taken *= 1e-9;
+    cout << "Time taken to find the output: " << fixed << time_taken << setprecision(9);
+    cout << " seconds" << endl;
+}
 
 
 int main()
 {
+    auto start = chrono::high_resolution_clock::now();
+
     Trie* trie = new Trie();
 
 
@@ -288,6 +295,9 @@ int main()
 
 
     }
+    auto end = chrono::high_resolution_clock::now();
+    printTimeTaken(start, end);
+
 
     delete trie;
 
